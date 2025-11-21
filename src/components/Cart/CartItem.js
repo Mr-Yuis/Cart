@@ -3,7 +3,7 @@ import { cartActions } from "../../store/cart-slice";
 
 const CartItem = (props) => {
   const dispatch = useDispatch();
-  const { id, title, quantity, total, price } = props.item;
+  const { id, title, quantity, totalPrice, price } = props.item;
 
   const addItemHandler = () => {
     dispatch(cartActions.addItemToCart({ id, title, price }));
@@ -18,8 +18,8 @@ const CartItem = (props) => {
       <header>
         <h3>{title}</h3>
         <div className="price">
-          ${total.toFixed(2)}{" "}
-          <span className="itemprice">(${price.toFixed(2)}/item)</span>
+          ${(totalPrice || 0).toFixed(2)}{" "}
+          <span className="itemprice">(${(price || 0).toFixed(2)}/item)</span>
         </div>
       </header>
       <div className="details">
