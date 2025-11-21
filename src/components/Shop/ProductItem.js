@@ -29,4 +29,4 @@ const ProductItem = (props) => {
   );
 };
 
-//export default ProductItem;
+export default ProductItem;
